@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvMergeSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:text="@string/mergesort"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btInapoiMergeSort"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inapoi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svMergeSortBiografie" />
+
+    <ScrollView
+        android:id="@+id/svMergeSortBiografie"
+        android:layout_width="0dp"
+        android:layout_height="475dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMergeSort">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTextMergeSort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="8dp"
+                android:text="\n
+        Sortarea prin interclasare, sau Mergesort este o metodă eficientă de sortare a elementelor
+unui tablou, bazată pe următoarea idee: dacă prima jumătate a tabloului are elementele sortate și
+a doua jumătate are de asemenea elementele sortate, prin interclasare se va obține tabloul sortat.
+        \n\n
+        Sortarea prin interclasare este un exemplu tipic de algoritm divide et impera:
+se sortează o secvență delimitată de indicii st și dr: \n
+            \u2022 dacă st &lt;= dr, problema este elementară, secvența fiind deja sortată \n
+            \u2022 daca st &lt; dr: \n
+                \u25CB se împarte problema în subprobleme, identificând mijlocul secvenței,
+m = (st + dr) / 2;\n
+                \u25CB se rezolvă subproblemele, sortând secvența delimitată de st și m,
+respectiv secvența delimitată de m+1 și dr – apeluri recursive; \n
+                \u25CB se combină soluțiile, interclasând cele două secvențe; în acest fel,
+secvența delimitată de st și dr este sortată.
+\n\n\n
+        În secvența următoare tabloul tmp se consideră declarat global, de aceeași dimensiune
+ca v:\n\n
+
+    void MergeSort(int v[], int st, int dr) \n
+    {\n
+        if(st &lt; dr)\n
+        {\n
+            int m = (st + dr) / 2;\n
+            MergeSort(v, st , m);\n
+            MergeSort(v, m + 1 , dr);\n
+            //Interclasare\n
+            int i = st, j = m + 1, k = 0;\n
+            while( i &lt;= m &#38;&#38; j &lt;= dr )\n
+                if( v[i] &lt; v[j])\n
+                    tmp[++k] = v[i++];\n
+                else\n
+                    tmp[++k] = v[j++];\n
+            while(i &lt;= m)\n
+                tmp[++k] = v[i++];\n
+            while(j &lt;= dr)\n
+                tmp[++k] = v[j++];\n
+            for(i = st , j = 1 ; i &lt;= dr ; i ++ , j ++)\n
+                v[i] = tmp[j];\n
+        }\n
+    }\n\n
+
+        Observații: \n
+            \u2022 complexitatea sortării prin interclasare este O(n⋅logn); \n
+            \u2022 pentru interclasare este este necesar un spațiu de memorie suplimentar,
+de dimensiunea tabloului care se sortează; \n
+            \u2022 în secvența de mai sus tabloul tmp a fost declarat global; declararea sa locală
+poate duce la depășirea stivei; o soluție pentru această situație poate fi alocarea dinamică a
+tabloului auxiliar \n
+
+"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

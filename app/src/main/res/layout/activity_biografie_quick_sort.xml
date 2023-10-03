@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvQuickSort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:text="@string/quicksort"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btInapoiQuickSort"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inapoi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svQuickSortBiografie" />
+
+    <ScrollView
+        android:id="@+id/svQuickSortBiografie"
+        android:layout_width="0dp"
+        android:layout_height="475dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvQuickSort">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTextQuickSort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="8dp"
+                android:text=
+"\n
+        QuickSort sau Sortarea rapidă este o metodă eficientă de sortare a unui tablou, descoperită
+în 1960 de programatorul britanic C.A.R. Hoare. Pentru un set de n valori oarecare algoritmul
+efectuează O(nlogn) comparații, dar în cazul cel mai nefavorabil se efectuează O(n2) comparații. \n\n
+        Algoritmul este de tip divide et impera; el sortează o secvență a tabloului (inițial întreg
+tabloul), astfel: \n
+            \u2022 se alege un element special al listei, numit pivot;\n
+            \u2022 se ordonează elementele listei, astfel încât toate elementele din stânga
+pivotului să fie mai mici sau egale cu acesta, și toate elementele din dreapta pivotului să fie
+mai mari sau egale cu acesta;\n
+            \u2022 se continuă recursiv cu secvența din stânga pivotului și cu cea din dreapta lui.
+
+            \n\n\n
+        Următoarea funcție C++ realizează sortarea unui tablou, transmis ca parametru:\n\n
+    void QuickSort(int v[], int st, int dr) \n
+    {\n
+        if(st &lt; dr)\n
+        {\n
+            //pivotul este inițial v[st]\n
+            int m = (st + dr) / 2;\n
+            int aux = v[st];\n
+            v[st] = v[m];\n
+            v[m] = aux;\n
+            int i = st , j = dr, d = 0;\n
+            while(i &lt; j)\n
+            {\n
+                if(v[i] &gt; v[j])\n
+                {\n
+                    aux = v[i]; \n
+                    v[i] = v[j];\n
+                    v[j] = aux;\n
+                    d = 1 - d;\n
+                }\n
+                i += d;\n
+                j -= 1 - d;\n
+            }\n
+            QuickSort(v, st , i - 1);\n
+            QuickSort(v, i + 1 , dr);\n
+        }\n
+    }\n\n
+
+    Observatii: \n
+
+        \u2022 în timpul pivotării: \n
+            \u25CB la fiecare iterație, doar una dintre variabilele i și j se modifică: sau crește i,
+sau scade j \n
+            \u25CB pivotul este elementul cu indicele care nu se modifică \n
+
+        \u2022 algoritmul descris mai sus realizează ordonarea crescătoare a tabloului; pentru
+ordonarea descrescătoarea algoritmul este asemănător: prin pivotare, elementele din stânga
+pivotului devin mai mari decât acesta, cele din dreapta devin mai mici; \n
+
+        \u2022 algoritmul este cu atât mai rapid cu cât la fiecare etapă cele două secvențe
+delimitate de pivot au lungimi cât mai apropiate (ideal egale); \n
+
+        \u2022 dacă tabloul este de la început ordonat crescător sau descrescător, complexitatea
+algoritmului devine pătratică – O(n2); \n
+
+        \u2022 anumite metode de alegere a pivotului pot să evite această situație \n
+"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

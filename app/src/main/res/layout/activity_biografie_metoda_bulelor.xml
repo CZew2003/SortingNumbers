@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvMetodaBulelor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:text="@string/metoda_bulelor"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btInapoiMetodaBulelor"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inapoi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svMetodaBulelorBiografie" />
+
+    <ScrollView
+        android:id="@+id/svMetodaBulelorBiografie"
+        android:layout_width="0dp"
+        android:layout_height="475dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMetodaBulelor">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTextMetodaBulelor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="8dp"
+                android:text=
+"\n
+        Cunoscută și sub numele BubbleSort, metoda bulelor se bazează pe următoare idee: \n
+            \u2022 fie un vector X[] cu n elemente \n
+            \u2022 parcurgem vectorul și pentru oricare două elemente învecinate care nu sunt în
+ ordinea dorită, le interschimbăm valorile \n
+            \u2022 după o singură parcurgere, vectorul nu se va sorta, dar putem repeta parcurgerea \n
+            \u2022 dacă la o parcurgere nu se face nicio interschimbare, vectorul este sortat \n
+            \n
+
+        O reprezentare a algoritmului este: \n
+            \u25CF cat timp vectorul nu este sortat \n
+                \u2022 presupunem că vectorul este sortat \n
+                \u2022 parcurgem vectorul \n
+                    \u25CB dacă două elemente învecinate nu sunt în ordinea dorită \n
+                        \u25AA le interschimbăm \n
+                        \u25AA schimbăm presupunerea inițială
+        \n\n\n
+            Algoritmul corespunzator in C++ \n \n
+        int n, v[100]; \n
+        //citire v[] cu n elemente \n
+        bool sortat;\n
+        do\n
+        {\n
+            sortat = true;\n
+            for(int i = 0 ; i &lt; n - 1 ; i ++)\n
+                if(v[i] > v[i+1])\n
+                {\n
+                  int aux = v[i];\n
+                  v[i] = v[i+1];\n
+                  v[i+1] = aux;\n
+                  sortat = false;\n
+                }\n
+        }\n
+        while(!sortat);\n
+"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

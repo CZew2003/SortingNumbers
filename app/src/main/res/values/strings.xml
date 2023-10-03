@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tipuri de sortari</string>
+    <string name="metoda_bulelor">Metoda Bulelor</string>
+    <string name="interschimbare">Interschimbare</string>
+    <string name="quicksort">Quick Sort</string>
+    <string name="mergesort">Merge Sort</string>
+    <string name="sortare">Sortare</string>
+    <string name="inapoi">Inapoi</string>
+    <string name="metoda_interschimbare">Interschimbare</string>
+    <string name="introduceti_numere">Introduceti numerele</string>
+    <string name="sterge">Sterge</string>
+</resources>

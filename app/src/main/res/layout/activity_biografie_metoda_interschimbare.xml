@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvMetodaInterschimbare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:text="@string/metoda_interschimbare"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btInapoiMetodaInterschimbare"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inapoi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svMetodaInterschimbareBiografie" />
+
+    <ScrollView
+        android:id="@+id/svMetodaInterschimbareBiografie"
+        android:layout_width="0dp"
+        android:layout_height="475dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMetodaInterschimbare">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTextMetodaInterschimbare"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="8dp"
+                android:text=
+"\n
+    Sortarea prin selecție (Selection Sort) se bazează pe următoarea idee: \n
+        \u2022 fie un vector X[] cu n elemente; \n
+        \u2022 plasăm în X[0] cea mai mică valoare din vector; \n
+        \u2022 plasăm în X[1] cea mai mică valoare rămasă; \n
+        \u2022 etc. \n
+    \n
+
+    O descriere a algoritmului este: \n
+        \u2022 parcurgem vectorul cu indicele i\n
+            \u25CB parcurgem cu indicele j elementele din dreapta lui X[i]\n
+                \u25AA dacă elementele X[i] și X[j] nu sunt în ordinea dorită, le interschimbăm
+    \n
+
+    Observatii \n
+        \u2022 în algoritmul de mai sus, pentru fiecare valoare a lui i, în X[i] se obține cela
+mai mică (mare) valoare dintre elementele cu indici i, i+1, ..., n; altfel spus, pentru fiecare i,
+în X[i] se selectează minimul (maximul) dintre elementele i, i+1, ..., n. \n
+
+        \u2022 metoda se mai numește sortare prin selecție directă, sortare prin selecție implicită
+sau sortare prin interschimbare.
+        \n\n\n
+
+        Algoritmul corespunzator in C++: \n\n
+
+    int n, X[100]; \n
+    //citire X[] cu n elemente\n
+    for(int i = 0 ; i &lt; n - 1 ; i ++)\n
+        for(int j = i + 1 ; j &lt; n ; j ++)\n
+            if(X[i] > X[j])\n
+            {\n
+                int aux = X[i];\n
+                X[i] = X[j];\n
+                X[j] = aux;\n
+            } \n
+"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
